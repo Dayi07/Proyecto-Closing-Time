@@ -24,11 +24,7 @@ class GuardarDoc extends Database{
         $sql = "SELECT * FROM Documentos WHERE usuarioID = $Idusuario";
         $res = mysqli_query($this->con, $sql);
 
-        if($res){
-            return $res;
-      }else{
-          return false;
-      } 
+        return $res;
   }
 
     public function eliminarDocumento($Id){

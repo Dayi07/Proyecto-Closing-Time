@@ -1,16 +1,17 @@
 <?php
-include ("Database.php");
+session_start();
+include ("Controladores/Database.php");
 include ("GuardarDoc.php"); 
 $usuarios = new GuardarDoc();
 $usuario = new Database();
 $ruta = "files/";
 
-$Correo = 'marilyn@gmail.com';
+$Correo = $_SESSION['CorreoUsu'];
 $res = $usuario->datosUsuario($Correo);
 $fila = mysqli_fetch_array($res);
 $id = $fila['Id_usuario'];
 ?>
-
+ 
 <!DOCTYPE html>
 <html lang="en">
 <head>

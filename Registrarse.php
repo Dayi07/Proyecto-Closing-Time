@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"> 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="css/Estilos.css">
 </head>
 <body>
-    
+     
     <form action="Registrarse.php" class="form-box" method="POST">
         
         <img src="img/logo.jpg" class="logo">      
@@ -25,7 +25,7 @@
 </html>
 
 <?php
-include ("Database.php");
+include ("Controladores/Database.php");
 				
 $usuarios= new Database();
 

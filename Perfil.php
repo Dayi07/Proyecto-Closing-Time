@@ -1,8 +1,8 @@
 <?php
-include ("Database.php");			 
+session_start();
+include ("Controladores/Database.php");			 
 $usuarios= new Database();
 
-session_start();
 $Correo = $_SESSION['CorreoUsu'];
 
 $res = $usuarios->datosUsuario($Correo);
@@ -16,8 +16,8 @@ $fila = mysqli_fetch_array($res);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil</title>
-    <link rel="stylesheet" type="text/css" href="css/perfil.css">
- 
+    <link rel="stylesheet" type="text/css" href="css/Perfil.css">
+  
 </head>
 <body>
 
@@ -43,7 +43,7 @@ $fila = mysqli_fetch_array($res);
 
 <form action="" method="POST" class="form-box">   
 
-    <img src="img/logo.jpg" class="foto">
+    <img src="img/logo.jpg" class="foto"><br><br><br>
 
     <h1>
         <?php   
@@ -65,8 +65,8 @@ $fila = mysqli_fetch_array($res);
         </h4>
 
     <div class="btn-perfil">
-        <button type="submit" name="CerrarSes" id="boton_perfil"><a href="login.php" onclick ="<?php session_destroy(); ?>">  Cerrar Sesion </a></button>
-        <button type="submit" name="CambiarCont" id="boton_perfil"><a  href="Cambiar_contrasena.php"> Cambia Contraseña </a></button>
+        <button type="button" name="CerrarSes" id="boton_perfil"><a href="login.php">  Cerrar Sesion </a></button>
+        <button type="button" name="CambiarCont" id="boton_perfil"><a  href="Cambiar_contrasena.php"> Cambia Contraseña </a></button>
     </div>
 </form>
 

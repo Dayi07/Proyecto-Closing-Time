@@ -11,7 +11,7 @@
 		protected $dbpass="";
 		protected $dbname="closingtime";		
 		protected $correo="";
-
+ 
 
 		
 		//Contructor
