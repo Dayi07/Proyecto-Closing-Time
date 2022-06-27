@@ -1,6 +1,6 @@
 <?php
  
-class GuardarDoc extends Database{
+class DocumentoController extends Database{
     protected $TipoArc="";
     protected $FechaHora="";		
     protected $Archivo="";
@@ -9,7 +9,7 @@ class GuardarDoc extends Database{
 
 
     public function insertarArchivo($id, $TipoArc, $FechaHora, $NomArchivo, $Estado){
-        $sql = "INSERT INTO documentos (usuarioID, Fecha_Hora_entrega, Tipo_documento, Archivo, Estado_documento) VALUES ($id, '$FechaHora', '$TipoArc','$NomArchivo', '$Estado') ";
+        $sql = "INSERT INTO documentos (Usuario_id, Fecha_Hora_entrega, Tipo_documento, Archivo, Estado) VALUES ($id, '$FechaHora', '$TipoArc','$NomArchivo', '$Estado') ";
         $res = mysqli_query($this->con, $sql);
 
         if($res){
@@ -21,7 +21,7 @@ class GuardarDoc extends Database{
 
 
     public function documentos($Idusuario){
-        $sql = "SELECT * FROM Documentos WHERE usuarioID = $Idusuario";
+        $sql = "SELECT * FROM Documentos WHERE Usuario_id = $Idusuario";
         $res = mysqli_query($this->con, $sql);
 
         return $res;

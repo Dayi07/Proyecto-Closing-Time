@@ -1,7 +1,7 @@
 <?php
-include("Database.php");
-include ("GuardarDoc.php"); 
-$usuarios = new GuardarDoc();
+include("Controladores/Database.php");
+include ("Controladores/DocumentoController.php"); 
+$usuarios = new DocumentoController();
 
 $id = $_GET['id'];
 

@@ -1,7 +1,7 @@
 <?php 
-include ("Database.php"); 
-include ("GuardarDoc.php"); 				
-$usuarios = new GuardarDoc();
+include ("Controladores/Database.php"); 
+include ("Controladores/DocumentoController.php"); 				
+$usuarios = new DocumentoController();
 
 $id = $_GET['id'];
 
@@ -38,7 +38,7 @@ if(isset($_POST) && !empty($_POST)){
 
 <form action="Modificar.php?id=<?php echo $id ?>" method="POST" class="form-box" enctype="multipart/form-data">
 
-    <center><h2>Modificar Archivo <?php echo $fila['Fecha_Hora_entrega']; ?></h2></center>
+    <center><h2>Modificar Archivo </h2></center>
     
     Tipo de Archivo: <select name="TipoArchivo">
                         <option <?php if ($fila['Tipo_documento'] == "Word") {
@@ -74,15 +74,15 @@ if(isset($_POST) && !empty($_POST)){
     
     
     Estado: <select name="Estado">
-                        <option <?php if ($fila['Estado_documento'] == "Pendiente") {
+                        <option <?php if ($fila['Estado'] == "Pendiente") {
                             echo 'selected'; } 
                         ?>>Pendiente</option>   
                         
-                        <option <?php if ($fila['Estado_documento'] == "Terminado") {
+                        <option <?php if ($fila['Estado'] == "Terminado") {
                             echo 'selected'; } 
                         ?>>Terminado</option>   
                         
-                        <option <?php if ($fila['Estado_documento'] == "Entregado") {
+                        <option <?php if ($fila['Estado'] == "Entregado") {
                             echo 'selected'; } 
                         ?>>Entregado</option>
                     </select><br>

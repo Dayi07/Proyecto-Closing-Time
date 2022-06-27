@@ -1,8 +1,8 @@
 <?php
 session_start();
 include ("Controladores/Database.php");
-include ("GuardarDoc.php"); 
-$usuarios = new GuardarDoc();
+include ("Controladores/DocumentoController.php"); 
+$usuarios = new DocumentoController();
 $usuario = new Database();
 $ruta = "files/";
 
@@ -14,7 +14,7 @@ $id = $fila['Id_usuario'];
  
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head> 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -64,13 +64,13 @@ $id = $fila['Id_usuario'];
         </div>
 
         <div id="botones">
-            <button type="" class="modificar"><a  href="Modificar.php?id=<?php echo $fila['Codigo_documento']; ?>"> Modificar </a></button><br><br><br>
+            <button type="" class="modificar"><a  href="Modificar.php?id=<?php echo $fila['Codigo_documento']; ?>"> Modificar </a></button><br><br><br><br><br>
             <button type="" class="eliminar"><a  href="Eliminar.php?id=<?php echo $fila['Codigo_documento']; ?>"> Eliminar </a></button>
         </div>
 
         <center>
             <div id="estado">
-                <p><b><?php echo $fila['Estado_documento']; ?></b></p>
+                <p><b><?php echo $fila['Estado']; ?></b></p>
             </div>
         </center>
 

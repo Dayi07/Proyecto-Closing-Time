@@ -58,12 +58,6 @@ $fila = mysqli_fetch_array($res);
         
     </h3>
     
-    <h4>
-        <?php   
-            echo "ID: " . $fila['Id_usuario'];
-        ?>
-        </h4>
-
     <div class="btn-perfil">
         <button type="button" name="CerrarSes" id="boton_perfil"><a href="login.php">  Cerrar Sesion </a></button>
         <button type="button" name="CambiarCont" id="boton_perfil"><a  href="Cambiar_contrasena.php"> Cambia Contraseña </a></button>

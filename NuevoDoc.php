@@ -10,9 +10,10 @@
 </head>
 <body>
 <?php
-include ("Database.php"); 
-include ("GuardarDoc.php"); 				
-$usuarios = new GuardarDoc();
+session_start();
+include ("Controladores/Database.php"); 
+include ("Controladores/DocumentoController.php"); 				
+$usuarios = new DocumentoController();
 $registro = new Database();
 
 #$limitekb = 200;
@@ -20,8 +21,8 @@ $registro = new Database();
 
      if(isset($_POST) && !empty($_POST)){
 
-        #Obteens el id del usuario
-        $Correo = 'marilyn@gmail.com';
+        #Obtener el id del usuario
+        $Correo = $_SESSION['CorreoUsu'];
         $res = $registro->datosUsuario($Correo);
         $fila = mysqli_fetch_array($res);
         $id = $fila['Id_usuario'];
@@ -48,7 +49,7 @@ $registro = new Database();
             if ($res) { 
 				header('location: http://localhost/PROYECTO/Documentos.php'); //Si es correcto se le envia al perfil
             }else{
-                echo "EROR al subir a la bd";
+                echo "ERROR al subir a la bd";
             }
              
         }else {

@@ -31,7 +31,6 @@
 
 
 
-		//???????????
 		public function sanitize($var){
             $return = mysqli_real_escape_string($this->con, $var);
             return $return;
@@ -98,9 +97,9 @@
 
 
 		//Funcion para el cambio de contraseña del usuario
-		public function cambiarContrasena($ContraNueva, $Correo){			
+		public function cambiarContrasena($ContraNueva, $id){			
 
-			$sql = "UPDATE usuario SET Contraseña_usuario = '$ContraNueva' WHERE  Correo_usuario = '$Correo'";//Sentencia sql para hacer efectivo el cambio de contraseña del usuario
+			$sql = "UPDATE usuario SET Contraseña_usuario = '$ContraNueva' WHERE  Id_usuario = '$id'";//Sentencia sql para hacer efectivo el cambio de contraseña del usuario
             $res = mysqli_query($this->con, $sql);
             
 			if($res){
@@ -111,7 +110,9 @@
 			
 		}
 
-
+		public function confirmarCambio(){
+			
+		}
 
 		//Funcion para mostrar los datos del usuario
 		public function datosUsuario($Correo){
