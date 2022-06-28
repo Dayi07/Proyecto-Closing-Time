@@ -43,7 +43,7 @@ $fila = mysqli_fetch_array($res);
 
 <form action="" method="POST" class="form-box">   
 
-    <img src="img/logo.jpg" class="foto"><br><br><br>
+    <img src="img/img-perfil.jpg" class="foto"><br><br><br>
 
     <h1>
         <?php   
@@ -53,13 +53,13 @@ $fila = mysqli_fetch_array($res);
 
     <h3>
         <?php   
-            echo $fila['Edad_usuario'];
+            echo "Edad: " . $fila['Edad_usuario'];
         ?> 
         
     </h3>
     
     <div class="btn-perfil">
-        <button type="button" name="CerrarSes" id="boton_perfil"><a href="login.php">  Cerrar Sesion </a></button>
+        <button type="button" name="CerrarSes" id="boton_perfil" onclick=""><a href="login.php">  Cerrar Sesion </a></button>
         <button type="button" name="CambiarCont" id="boton_perfil"><a  href="Cambiar_contrasena.php"> Cambia Contraseña </a></button>
     </div>
 </form>

@@ -1,11 +1,12 @@
 <?php
  
 class DocumentoController extends Database{
+    
     protected $TipoArc="";
     protected $FechaHora="";		
     protected $Archivo="";
     protected $NomArchivo="";
-
+    protected $Estado="";
 
 
     public function insertarArchivo($id, $TipoArc, $FechaHora, $NomArchivo, $Estado){
@@ -39,9 +40,9 @@ class DocumentoController extends Database{
 
     }
 
-    public function modificar($TipoArc, $FechaHora, $Archivo, $id){
+    public function modificar($TipoArc, $Estado, $id){
         
-        $sql = "UPDATE Documentos SET Fecha_Hora_entrega='$FechaHora', Tipo_documento='$TipoArc', Archivo='$Archivo' WHERE usuarioID = $id";
+        $sql = "UPDATE Documentos SET Estado='$Estado', Tipo_documento='$TipoArc' WHERE Codigo_documento = $id";
         $res = mysqli_query($this->con, $sql);
         
         if($res){

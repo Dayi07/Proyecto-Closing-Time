@@ -1,9 +1,6 @@
 create database ClosingTime; 
 use closingtime;
 
-drop database closingtime;
-
-
 -- Estructura de la tabla `USUARIO` --
 use Closingtime;
 select * from usuario;

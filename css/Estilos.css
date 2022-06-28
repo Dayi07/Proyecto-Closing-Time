@@ -21,12 +21,13 @@ body {
     background: white;
     text-align: center;
 }
-
+ 
 
 .form-box input[type="text"],
 .form-box input[type="password"],
 .form-box button[type="submit"],
-.form-box a[type="text"]{ 
+.form-box a[type="text"],
+a{ 
     border: 0;
     background: none;
     display: block;

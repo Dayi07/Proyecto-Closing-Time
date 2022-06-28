@@ -3,7 +3,7 @@ body, html {
 } 
   
 body {
-    background: white;
+    background: #d9f8f3;
     margin: 0%;
     padding: 0%;
 
@@ -16,14 +16,15 @@ body {
 }
 
 .form-box {
-    width: auto;
+    width: 50%;
     height: auto;
     padding: 40px;
-    background: #d9f8f3;
+    background: white;
 }
 
 select,
 .form-box button[type="submit"],
+.form-box button[type="text"],
 .form-box input[type="file"],
 .form-box input[type="datetime-local"]{ 
     border: 0;
@@ -39,6 +40,7 @@ select,
     transition: 0,25px;
     
 }
+
 
 .form-box button[type="submit"],
 .form-box button a{ 

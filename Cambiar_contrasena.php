@@ -30,7 +30,7 @@
         <input type="password" placeholder="Contraseña nueva" name="ContraNueva">      
         <input type="password" placeholder="Confirmar contraseña" name="ConfNueva">
         <button type="submit"> Cambiar </button>
-        <button type="submit"><a href="perfil.php"> Cancelar </a></button>
+        <button type="submit"><a  href="perfil.php"> Cancelar </a></button>
         
     </form>
 

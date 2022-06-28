@@ -64,10 +64,10 @@ $id = $fila['Id_usuario'];
         </div>
 
         <div id="botones">
-            <button type="" class="modificar"><a  href="Modificar.php?id=<?php echo $fila['Codigo_documento']; ?>"> Modificar </a></button><br><br><br><br><br>
-            <button type="" class="eliminar"><a  href="Eliminar.php?id=<?php echo $fila['Codigo_documento']; ?>"> Eliminar </a></button>
-        </div>
+            <button type="" class="modificar"><a  href="Modificar.php?id=<?php echo $fila['Codigo_documento']; ?>"> Modificar </a></button><br><br><br>
+            <button type="" class="eliminar"><a  href="#" data-href="Eliminar.php?id=<?php echo $fila['Codigo_documento']; ?>" > Eliminar </a></button>
 
+        </div>
         <center>
             <div id="estado">
                 <p><b><?php echo $fila['Estado']; ?></b></p>

@@ -37,6 +37,12 @@
         }
 
 
+		//Funcion para cerrar la sesion
+		public function cerrarSesion(){
+			return session_destroy();
+		}
+
+
 
 		//Funcion para hacer un registro nuevo 
         public function registro($Nombre,$Edad, $Correo, $Contrasena){
