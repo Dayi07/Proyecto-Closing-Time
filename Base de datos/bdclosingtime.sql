@@ -11,23 +11,20 @@ CREATE TABLE usuario (
   Correo_usuario varchar(20) NOT NULL,
   Edad_usuario int(2) NOT NULL,
   Contraseña_usuario varchar(20) NOT NULL,
-  Foto_perfil longblob
+  Foto_perfil varchar(20)
 );
-
-
-
 
 
 -- Estructura de la tabla `PLAN`
 use closingtime;
 CREATE TABLE plan (
   Id_plan int PRIMARY KEY AUTO_INCREMENT,
-  usuarioID int NOT NULL,
+  Usuario_id int NOT NULL,
   Nombre_plan varchar(20) NOT NULL,
   Costo_plan int(11) NOT NULL,
   Tiempo_limite datetime NOT NULL,
   Estado_plan boolean DEFAULT False,
-  FOREIGN KEY (usuarioID) REFERENCES usuario(Id_usuario) -- Declaramos la FOREIGN KEY --
+  FOREIGN KEY (Usuario_id) REFERENCES usuario(Id_usuario) -- Declaramos la FOREIGN KEY --
 );
 
 
@@ -37,31 +34,26 @@ CREATE TABLE plan (
 use closingtime;
 CREATE TABLE cronometro (
   Id_cronometro int PRIMARY KEY AUTO_INCREMENT,
-  usuarioID int NOT NULL,
+  Usuario_id int NOT NULL,
   Cantidad_tiempo time NOT NULL,
   Tiempo_personalizado time,
-  FOREIGN KEY (usuarioID) REFERENCES usuario(Id_usuario) -- Declaramos la FOREIGN KEY --
+  FOREIGN KEY (Usuario_id) REFERENCES usuario(Id_usuario) -- Declaramos la FOREIGN KEY --
 
 );
 
-
- use closingtime;
- DELETE FROM Documentos WHERE Codigo_documento = 10;
 
 -- Estructura de la tabla `DOCUMENTOS`
 use closingtime;
-select * from Documentos;
-CREATE TABLE Documentos (
+select * from documentos;
+CREATE TABLE documentos (
   Codigo_documento int PRIMARY KEY AUTO_INCREMENT,
-  usuarioID int NOT NULL,
+  Usuario_id int NOT NULL,
   Fecha_Hora_entrega datetime NOT NULL, 
   Tipo_documento varchar(20) NOT NULL,
-  Estado_documento varchar(15) NOT NULL,
+  Estado varchar(15) NOT NULL,
   Archivo varchar(50) NOT NULL,
-  FOREIGN KEY (usuarioID) REFERENCES usuario(Id_usuario) -- Declaramos la FOREIGN KEY --
+  FOREIGN KEY (Usuario_id) REFERENCES usuario(Id_usuario) -- Declaramos la FOREIGN KEY --
 );
-use closingtime;
-alter table Documentos add Estado_documento varchar(15) NOT NULL;
 
 
 -- Estructura de la tabla intermedia 'entre usuario y plan'
